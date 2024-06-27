@@ -26,7 +26,7 @@ endif()
 zephyr_include_directories(mcux-sdk/devices/${MCUX_DEVICE_PATH})
 zephyr_include_directories(mcux-sdk/devices/${MCUX_DEVICE_PATH}/drivers)
 
-if (${MCUX_DEVICE} MATCHES "MIMX8QX6_ca35")
+if (${MCUX_DEVICE} MATCHES "MIMX8QX6|MIMX8QX6_ca35")
 zephyr_include_directories(mcux-sdk/devices/${MCUX_DEVICE_PATH}/scfw_api)
 endif()
 
@@ -57,7 +57,7 @@ if (${MCUX_DEVICE} MATCHES "LPC|MIMXRT6|MIMXRT5|RW6|MCXN.4.")
   zephyr_library_sources_ifdef(CONFIG_HWINFO_RW61X mcux-sdk/devices/${MCUX_DEVICE}/drivers/fsl_ocotp.c)
 endif()
 
-if (${MCUX_DEVICE} MATCHES "MIMX8QX6_ca35")
+if (${MCUX_DEVICE} MATCHES "MIMX8QX6|MIMX8QX6_ca35")
   zephyr_library_sources(mcux-sdk/devices/${MCUX_DEVICE_PATH}/scfw_api)
   zephyr_library_sources(mcux-sdk/devices/${MCUX_DEVICE_PATH}/scfw_api/main/ipc_imx8qx.c)
   zephyr_library_sources(mcux-sdk/devices/${MCUX_DEVICE_PATH}/scfw_api/svc/irq/irq_rpc_clnt.c)
